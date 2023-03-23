@@ -1,0 +1,20 @@
+<!-- written by Carolin Bischoping -->
+<header> 
+    <ul class="nav nav-pills">
+        <li routerLinkActive="active">
+            <a [routerLink]="['/rezepte']" >Rezeptbuch</a>
+            <!--statt normalen Verlinkungen werden Router Verlinkungen verwendet-->
+        </li>
+        <li routerLinkActive="active">
+            <a [routerLink]="['/einkaufsliste']">Einkaufsliste</a>
+        </li>
+
+        <li>
+            <a  class="btn btn-success" (click)="onNewRecipe()"> Neues Rezept</a>
+        </li>
+
+      </ul>
+</header>
+
+
+<!-- written by Carolin Bischoping -->
