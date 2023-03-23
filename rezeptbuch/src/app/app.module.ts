@@ -2,11 +2,13 @@ import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { EinkaufslisteComponent } from './einkaufsliste/einkaufsliste.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    EinkaufslisteComponent
   ],
   imports: [
     BrowserModule,
