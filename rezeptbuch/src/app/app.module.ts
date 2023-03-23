@@ -1,14 +1,16 @@
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { AppComponent } from './app.component';
-import { EinkaufslisteComponent } from './einkaufsliste/einkaufsliste.component';
+import { HeaderComponent } from './header.component';
+import { RezeptComponent } from './rezept/rezept.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    EinkaufslisteComponent
+    RezeptComponent
   ],
   imports: [
     BrowserModule,
