@@ -5,12 +5,14 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header.component';
 import { RezeptComponent } from './rezept/rezept.component';
+import { RecipeDetailsComponent } from './rezept/recipe-details/recipe-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    RezeptComponent
+    RezeptComponent,
+    RecipeDetailsComponent
   ],
   imports: [
     BrowserModule,
