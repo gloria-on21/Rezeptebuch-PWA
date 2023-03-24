@@ -14,6 +14,8 @@ export class ShoppingListAddComponent  implements OnChanges{
   isAdd = true;
 
   constructor(private sls: ShoppingListService ){
+
+    this.sls.fetchData();
   }
 
   onSubmit(form: NgForm){

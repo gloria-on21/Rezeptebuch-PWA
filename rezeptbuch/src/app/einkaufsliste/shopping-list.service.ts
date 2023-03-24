@@ -15,6 +15,7 @@ export class ShoppingListService {
 
     addIngredient(ingredient: Ingridient){
         this.ingredients.push(ingredient);
+        this.storeData();
     }
 
     deleteIngredient(ingredient:Ingridient){
@@ -23,9 +24,23 @@ export class ShoppingListService {
 
 
     }
+
     editIngredient(oldIngredient: Ingridient | null, newIngredient: Ingridient){
         if ( oldIngredient !== null){
         this.ingredients[this.ingredients.indexOf(oldIngredient)] = newIngredient;}
 
     }
-}
+    storeData(){
+        localStorage.setItem('ingredients', JSON.stringify(this.ingredients));
+    }
+    fetchData(){
+        const storedRecipes = localStorage.getItem('ingredients'); // liest die Rezepte aus dem localStorage aus
+        if (storedRecipes) {
+          this.ingredients = JSON.parse(storedRecipes);
+        }
+      }
+    
+    }
+       
+    
+    

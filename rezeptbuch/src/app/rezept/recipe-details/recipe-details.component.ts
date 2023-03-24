@@ -36,6 +36,7 @@ private router: Router ){
 onAddToList(){
 
 this.sls.addIngredients(this.selectedRecipe.ingridients);
+this.router.navigate(['/einkaufsliste'])
 
 }
 

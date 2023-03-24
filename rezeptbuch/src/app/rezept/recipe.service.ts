@@ -53,17 +53,16 @@ export class RecipeService{
     this.recipes.push(recipe);
     this.storeData();
   }
-  editRecipe(oldRecipe: Recipe, newRecipe:Recipe){
-
-    this.recipes[this.recipes.indexOf(oldRecipe)]= newRecipe;
+  editRecipe(index: number, newRecipe: Recipe) {
+    this.recipes[index] = newRecipe;
+    this.recipesChanged.next(this.recipes.slice());
   }
+  
   storeData(){
     localStorage.setItem('recipes', JSON.stringify(this.recipes));
    
 
-/* const body = JSON.stringify(this.recipes);
-const headers = new HttpHeaders({'Content-Type': 'application/json'}); 
-return this.http.put('https://rezepte-728a6-default-rtdb.firebaseio.com/recipe.json', body, {headers: headers}); */
+
   }
 fetchData(){
   const storedRecipes = localStorage.getItem('recipes'); // liest die Rezepte aus dem localStorage aus
@@ -72,5 +71,7 @@ fetchData(){
     this.recipesChanged.emit(this.recipes);
   }
 }}
+
+// written by Gloria
 
 

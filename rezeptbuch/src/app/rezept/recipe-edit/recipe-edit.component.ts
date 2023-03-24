@@ -27,6 +27,8 @@ this.subscription.unsubscribe();
 }
 
 ngOnInit() {
+    
+    
 
 this.subscription = this.route.params.subscribe(
 params =>{
@@ -34,6 +36,7 @@ if(params.hasOwnProperty('id')){
 this.isNew = false;
 this.recipeIndex = +params['id'];
 this.recipe = this.recipeService.getRecipe(this.recipeIndex);
+
 }
 else{
 this.isNew = true;
@@ -68,16 +71,7 @@ recipeDescription = this.recipe?.description
 }
 
 
-//hier werden die ganzen Controlls übergeben:
-//hier erstellen wir über die von Angular verfügbare Klasse eine Form
 
-this.recipeForm = new FormGroup({
-'name': new FormControl(recipeName, Validators.required),
-'imagePath': new FormControl(recipeImagePath, Validators.required),
-'description': new FormControl(recipeDescription, Validators.required),
-'ingredients': recipeIngredients
-
-});
 
 }
 
@@ -87,7 +81,7 @@ if(this.isNew){
 this.recipeService.addRecipe(newRecipe)
 }
 else {
-this.recipeService.editRecipe(this.recipe, newRecipe)
+this.recipeService.editRecipe(this.recipeIndex, newRecipe)
 }
 this.onNavigateBack();
 }

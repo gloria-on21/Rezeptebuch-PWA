@@ -28,4 +28,6 @@ export class EinkaufslisteComponent implements OnInit {
   }
 
 }
+
+
 //written by Carolin Bischoping 
