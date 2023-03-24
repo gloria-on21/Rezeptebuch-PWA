@@ -8,10 +8,9 @@
         <ul class="list-group">
             <a 
             class="list-group-item" 
-            style="" 
             *ngFor="let ingridient of ingredients"
             (click)="onSelectItem(ingridient)"
-            >{{ingridient.name}} {{ingridient.amount}}</a>
+            >{{ingridient.amount}}x {{ingridient.name}}</a>
         </ul>
     </div>
 

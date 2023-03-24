@@ -49,9 +49,7 @@ let recipeName= null;
 let recipeImagePath = null;
 let recipeDescription = null;
 let recipeIngredients = new FormArray([]);
-//joa das laden funktioniert nicht ganz aber das funktioniert nicht wirklich weil ich keinen FormArray einfach so übergeben kann
 
-//Wenn wir nicht in den isnew Modus sind werden die Daten überschrieben
 if(!this.isNew){
 if(this.recipe?.hasOwnProperty('ingredients')){
 for (let ingredient of this.recipe.ingridients){
